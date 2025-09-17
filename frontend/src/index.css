@@ -1,0 +1,37 @@
+@import "tailwindcss";
+/* @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *)) */
+@custom-variant dark (&:where([data-theme="light"], [data-theme="light"] *))
+
+
+* {
+  /* padding: 0;
+  margin: 0;
+  box-sizing: border-box; */
+}
+
+body {
+  min-hieght: 100vh;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav a.active {
+  color: #314158;
+  border-bottom: #314158 1px solid;
+}
+
+/* hide scorll bar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.food-item button {
+  cursor: pointer;
+}

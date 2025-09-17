@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delivery</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+  </head>
+  <body class="light">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx">
+      // tailwind.config.js
+      export default {
+        content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+        darkMode: "class", // enable class-based dark mode toggle
+        theme: {
+          extend: {
+            fontFamily: {
+              outfit: ["Outfit", "sans-serif"],
+            },
+            // keyframes: {
+            //   fadeIn: {
+            //     '0%': { opacity: '0' },
+            //     '100%': { opacity: '1' },
+            //   }
+            // },
+            // animation: {
+            //   fadeIn: 'fadeIn 3s ease-in-out forwards',
+            // },
+          },
+        },
+        plugins: [],
+      }
+    </script>
+  </body>
+</html>
