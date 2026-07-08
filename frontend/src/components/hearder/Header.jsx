@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useState } from 'react'
 // import Container from "./Container";
 import {assets} from '../../assets/frontend_assets/assets'
 import { FaSearch, FaShoppingBag, FaShoppingCart } from "react-icons/fa"   // solid
@@ -19,9 +19,10 @@ const links = [
 
 ];
 
-const Header = ({setShowLogin}) => {
+const Header = ({setShowLogin, searchQuery, setSearchQuery}) => {
 
   const {cartItems} = useContext(StoreContext);
+  const [showSearch, setShowSearch] = useState(false);
 
   
   return (
@@ -46,12 +47,23 @@ const Header = ({setShowLogin}) => {
           />
 
           <div className="nav-right flex items-center gap-2  sm:gap-3.5">
-            <a
+            {showSearch && (
+              <input 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                type="text" 
+                placeholder="Search foods..."
+                className="w-28 sm:w-44 px-3 py-1.5 border border-gray-300 rounded-lg outline-none focus:border-orange-500"
+              />
+            )}
+
+            <button
+              type="button"
               title="search" 
-              href="#">
-              
+              onClick={() => setShowSearch((prev) => !prev)}
+              className="cursor-pointer">
               <FaSearch className="text-xl" />
-            </a>
+            </button>
             
             <Link 
               title="cart"

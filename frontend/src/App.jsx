@@ -15,6 +15,7 @@ import TakeOrder from './pages/TakeOrder'
 const App = () => {
 
   const [showLogin, setShowLogin] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   return (
 
@@ -25,7 +26,11 @@ const App = () => {
         className='font-outfi relative'>
 
       
-        <Header setShowLogin={setShowLogin} />  
+        <Header 
+          setShowLogin={setShowLogin} 
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />  
         {/* login form */}
         {showLogin && ( <LoginPopup setShowLogin={setShowLogin} /> )}
         
@@ -33,7 +38,7 @@ const App = () => {
         <Routes>
 
           <Route path='/' element={
-            <Home />
+            <Home searchQuery={searchQuery} />
           } />
           <Route path='/cart' element={<Cart />} />
           

@@ -1,14 +1,42 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { food_list } from '../assets/frontend_assets/assets'
 
 export  const StoreContext = createContext(null)
+
+const CART_STORAGE_KEY = 'cartItems';
+
+const getSavedCart = () => {
+  try {
+    const savedCart = localStorage.getItem(CART_STORAGE_KEY);
+
+    if (!savedCart) return {};
+
+    const parsedCart = JSON.parse(savedCart);
+
+    if (!parsedCart || typeof parsedCart !== 'object' || Array.isArray(parsedCart)) {
+      return {};
+    }
+
+    return parsedCart;
+  } catch (error) {
+    return {};
+  }
+}
 
 const StoreContextProvider = (props) => {
 
 
   
 
-  const [cartItems , setCartItems] = useState({});
+  const [cartItems , setCartItems] = useState(getSavedCart);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+    } catch (error) {
+      console.error('Failed to save cart items', error);
+    }
+  }, [cartItems]);
 
   const addToCart = (itemId) => {
     

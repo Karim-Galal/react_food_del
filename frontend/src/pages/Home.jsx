@@ -4,7 +4,7 @@ import LandingPage from '../components/LandingPage'
 import ExploreMenu from '../components/ExploreMenu'
 import ShowFoodList from '../components/ShowFoodList'
 
-const Home = () => {
+const Home = ({searchQuery}) => {
 
   const [category, setCategory] = useState('all');
 
@@ -14,7 +14,7 @@ const Home = () => {
 
         <Container>
           <ExploreMenu category={category} onClick={setCategory} />
-          <ShowFoodList category={category} />
+          <ShowFoodList category={category} searchQuery={searchQuery} />
         </Container>
     </div>
   )
