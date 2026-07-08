@@ -2,10 +2,10 @@ import Navbar from "./Navbar";
 import React, { useContext, useState } from 'react'
 // import Container from "./Container";
 import {assets} from '../../assets/frontend_assets/assets'
-import { FaSearch, FaShoppingBag, FaShoppingCart } from "react-icons/fa"   // solid
+import { FaSearch, FaShoppingBag } from "react-icons/fa"   // solid
 import { Link } from "react-router-dom";
 // import { FaRegSearch, FaRegHandbag, FaRegCreditCard } from "react-icons/fa6"
-import { StoreContext } from "../../context/StoreContext";
+import { StoreContext } from "../../context/StoreContextValue";
 
 
 
@@ -23,6 +23,7 @@ const Header = ({setShowLogin, searchQuery, setSearchQuery}) => {
 
   const {cartItems} = useContext(StoreContext);
   const [showSearch, setShowSearch] = useState(false);
+  const cartItemCount = Object.values(cartItems).reduce((total, itemCount) => total + itemCount, 0);
 
   
   return (
@@ -71,14 +72,16 @@ const Header = ({setShowLogin, searchQuery, setSearchQuery}) => {
               className="relative w-fit inline-flex items-center  text-sm font-medium   "
             > 
               <FaShoppingBag className="text-xl" />
-              {cartItems && Object.keys(cartItems).length > 0  && (
-                <div className="absolute inline-flex items-center justify-center w-3.5 h-3.5 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-1 -end-1 "></div>
+              {cartItemCount > 0  && (
+                <div className="absolute inline-flex items-center justify-center min-w-4 h-4 px-1 text-[10px] font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2 ">
+                  {cartItemCount}
+                </div>
               )}
             </Link>
 
             <button 
               onClick={()=> setShowLogin(true)}
-              class="px-3.5 py-1.5 rounded-lg border border-gray-600 
+              className="px-3.5 py-1.5 rounded-lg border border-gray-600 
                     text-gray-800 dark:text-gray-200 
                     bg-transparent cursor-pointer
                     hover:bg-gray-200 dark:hover:bg-gray-700 

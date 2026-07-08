@@ -1,7 +1,6 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { food_list } from '../assets/frontend_assets/assets'
-
-export  const StoreContext = createContext(null)
+import { StoreContext } from './StoreContextValue'
 
 const CART_STORAGE_KEY = 'cartItems';
 

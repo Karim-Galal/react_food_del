@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { StoreContext } from '../context/StoreContext'
+import { StoreContext } from '../context/StoreContextValue'
 import FoodItemCard from './FoodItemCard';
 
 const ShowFoodList = ({category, searchQuery = '', sortBy = '' }) => {

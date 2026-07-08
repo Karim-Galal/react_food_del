@@ -77,12 +77,9 @@ const LoginPopup = ({ setShowLogin }) => {
                     Remember me
                   </label>
                 </div>
-                <a
-                  href="#"
-                  className="ms-auto text-sm text-orange-700 hover:underline dark:text-orange-500"
-                >
-                  Lost Password?
-                </a>
+                <span className="ms-auto text-sm text-gray-500 dark:text-gray-300">
+                  Password help unavailable
+                </span>
               </div>
               <button
                 type="submit"

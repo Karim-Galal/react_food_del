@@ -1,6 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/frontend_assets/assets'
-import Heading from './Heading'
+import { Link } from 'react-router-dom'
 
 const LandingPage = () => {
   return (
@@ -19,12 +19,13 @@ const LandingPage = () => {
           <p className='text-sm sm:text-base lg:text-lg mt-2'>
             Discover endless choices from local favorites to global cuisines, with easy ordering and fast delivery right to your doorstep.
           </p>
-          <button
+          <Link
+            to="/menu"
             className="mt-6 px-6 py-3 bg-white text-slate-900 font-semibold rounded-full shadow-md
                       hover:bg-slate-100 hover:shadow-lg hover:scale-105 transition duration-300"
           >
             View Menu
-          </button>
+          </Link>
         </div>
       </div>
     </div>
