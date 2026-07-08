@@ -11,6 +11,9 @@ import Cart from './pages/Cart'
 import ExploreMenu from './components/ExploreMenu'
 import Home from './pages/Home'
 import TakeOrder from './pages/TakeOrder'
+import Menu from './pages/Menu'
+import Contact from './pages/Contact'
+import MobileApp from './pages/MobileApp'
 
 const App = () => {
 
@@ -40,6 +43,9 @@ const App = () => {
           <Route path='/' element={
             <Home searchQuery={searchQuery} />
           } />
+          <Route path='/menu' element={<Menu searchQuery={searchQuery} />} />
+          <Route path='/mobile-app' element={<MobileApp />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
           
           <Route path='/order' element={<TakeOrder />} />

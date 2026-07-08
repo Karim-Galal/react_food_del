@@ -12,9 +12,9 @@ import { StoreContext } from "../../context/StoreContext";
 
 const links = [
   {title:'Home', url: '/'},
-  {title:'Menu', url: 'menu'},
-  {title:'Mobile App', url: 'mobile-app'},
-  {title:'Contact us', url: 'contact'},
+  {title:'Menu', url: '/menu'},
+  {title:'Mobile App', url: '/mobile-app'},
+  {title:'Contact us', url: '/contact'},
   
 
 ];
@@ -67,7 +67,7 @@ const Header = ({setShowLogin, searchQuery, setSearchQuery}) => {
             
             <Link 
               title="cart"
-              to={'cart'}
+              to={'/cart'}
               className="relative w-fit inline-flex items-center  text-sm font-medium   "
             > 
               <FaShoppingBag className="text-xl" />

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { StoreContext } from '../context/StoreContext'
 import FoodItemCard from './FoodItemCard';
 
-const ShowFoodList = ({category, searchQuery = '' }) => {
+const ShowFoodList = ({category, searchQuery = '', sortBy = '' }) => {
 
   const {food_list} = useContext(StoreContext);
   const normalizedSearch = searchQuery.trim().toLowerCase();
@@ -12,6 +12,12 @@ const ShowFoodList = ({category, searchQuery = '' }) => {
     const matchesSearch = item.name.toLowerCase().includes(normalizedSearch);
 
     return matchesCategory && matchesSearch;
+  }).sort((a, b) => {
+    if (sortBy === 'name') return a.name.localeCompare(b.name);
+    if (sortBy === 'price-low') return a.price - b.price;
+    if (sortBy === 'price-high') return b.price - a.price;
+
+    return 0;
   });
 
   return (
