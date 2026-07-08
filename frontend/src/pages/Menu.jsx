@@ -32,6 +32,8 @@ const Menu = ({searchQuery}) => {
         </select>
       </div>
 
+
+
       <ShowFoodList 
         category={category} 
         searchQuery={searchQuery} 

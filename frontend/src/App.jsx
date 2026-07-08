@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Header from './components/hearder/Header'
+import Header from './components/header/Header'
 import Footer from './components/Footer'
-import LoginPopup from './components/loginPopup'
+import LoginPopup from './components/LoginPopup'
 // pages 
 import Cart from './pages/Cart'
 import Home from './pages/Home'
